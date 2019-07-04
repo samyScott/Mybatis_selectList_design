@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--mybatis的主配置文件 -->
+    <environments default="mysql">
+        <environment id="mysql">
+            <!-- 配置事务类型-->
+            <transactionManager type="JDBC" />
+            <!-- 配置数据源(连接池)-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/eesy"/>
+                <property name="username" value="root"/>
+                <property name="password" value="csy123"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--指定映射文件的位置,映射配置文件是每个dao的独立配置文件-->
+    <mappers>
+<!--        <mapper resource="cn/edu/hdu/dao/IUserDao.xml" />-->
+        <mapper class="cn.edu.hdu.dao.IUserDao" />
+    </mappers>
+</configuration>
